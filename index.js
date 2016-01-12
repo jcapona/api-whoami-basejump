@@ -10,7 +10,8 @@ app.get("/", function(request, response) {
   var lang = request.header('accept-language').split(",")[0];
   var os = request.header('user-agent').match(/\(([^)]+)\)/)[1];
     
-  response.send(JSON.stringify({"ipaddress": ip,"language": lang,"software":os}));
+  response.end(JSON.stringify({"ipaddress":ip,"language":lang,"software":os}));
+  
 
 });
 
